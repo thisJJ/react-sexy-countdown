@@ -6,3 +6,4 @@ readme-source
 .npmrc
 node_module
 *.log
+static
