@@ -72,7 +72,7 @@ class Countdown extends _react.Component {
     this.stop = () => {
       clearInterval(this.interval);
       const {
-        endCountDown
+        onEndCountdown
       } = this.props;
       onEndCountdown(0);
     };
@@ -176,7 +176,7 @@ class Countdown extends _react.Component {
 }
 
 Countdown.propTypes = {
-  date: _propTypes2.default.string.isRequired,
+  date: _propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.number]),
   onEndCountdown: _propTypes2.default.func
 };
 
