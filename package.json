@@ -1,6 +1,6 @@
 {
   "name": "react-sexy-countdown",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "React Countdown",
   "main": "./index.js",
   "scripts": {
@@ -34,7 +34,6 @@
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-1": "^6.24.1",
-    "moment-timezone": "^0.5.17",
     "path": "^0.12.7",
     "prop-types": "^15.6.1",
     "react": "^16.3.2",

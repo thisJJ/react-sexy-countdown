@@ -15,10 +15,20 @@ import Countdown from 'react-sexy-countdown'
 
 ```
 
+##Support this date&time format only
+```
+2018-05-29T07:00:00+07:00
+```
+### Can use moment-timezone for convert format
+```
+const dateFormat = moment.tz(1527552000000, 'Asia/Bangkok').format() 
+console.log(dateFormat); //2018-05-29T07:00:00+07:00
+```
+
 ## using
 ```javascript
 <Countdown
-  date={ 1212133333 }
+  date="2018-05-29T07:00:00+07:00"
   onEndCountdown={ (count) => console.log(count) }
 />
 ```

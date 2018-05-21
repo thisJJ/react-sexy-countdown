@@ -12,10 +12,6 @@ var _propTypes = require('prop-types');
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _momentTimezone = require('moment-timezone');
-
-var _momentTimezone2 = _interopRequireDefault(_momentTimezone);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 class Countdown extends _react.Component {
@@ -24,9 +20,8 @@ class Countdown extends _react.Component {
 
     this.componentDidMount = () => {
       // update every second
-      const dateFormat = _momentTimezone2.default.tz(this.props.date, this.props.timeZone).format();
       this.interval = setInterval(() => {
-        const date = this.calculateCountdown(dateFormat);
+        const date = this.calculateCountdown(this.props.date);
         date ? this.setState(date) : this.stop();
       }, 1000);
     };
@@ -181,13 +176,11 @@ class Countdown extends _react.Component {
 }
 
 Countdown.propTypes = {
-  timeZone: _propTypes2.default.string,
   date: _propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.number]),
   onEndCountdown: _propTypes2.default.func
 };
 
 Countdown.defaultProps = {
-  timeZone: 'Asia/Bangkok',
   date: new Date(),
   onEndCountdown: () => null
 };
