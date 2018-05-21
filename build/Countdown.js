@@ -16,7 +16,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 const langFormat = {
   en: {
-    Days: 'D',
+    Days: 'Days',
     Day: 'Day',
     Hours: 'Hours',
     Min: 'Min',
