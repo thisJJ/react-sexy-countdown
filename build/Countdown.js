@@ -24,7 +24,7 @@ class Countdown extends _react.Component {
 
     this.componentDidMount = () => {
       // update every second
-      const dateFormat = _momentTimezone2.default.tz(this.props.date, this.props.timeZone);
+      const dateFormat = _momentTimezone2.default.tz(this.props.date, this.props.timeZone).format();
       this.interval = setInterval(() => {
         const date = this.calculateCountdown(dateFormat);
         date ? this.setState(date) : this.stop();
