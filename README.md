@@ -23,6 +23,12 @@ import Countdown from 'react-sexy-countdown'
 />
 ```
 
+![view](https://thisjj.github.io/react-sexy-countdown/static/1.png "View 1")
+
+![view](https://thisjj.github.io/react-sexy-countdown/static/2.png "View 2")
+
+![view](https://thisjj.github.io/react-sexy-countdown/static/3.png "View 3")
+
 ## Style (with className for you custom style)
 ```html
   <div className="react-countdown-container">
