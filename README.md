@@ -25,11 +25,20 @@ const dateFormat = moment.tz(1527552000000, 'Asia/Bangkok').format()
 console.log(dateFormat); //2018-05-29T07:00:00+07:00
 ```
 
+## Config props
+| Props        | Type         | Default  | Format Example |
+| ------------- |:-------------:| --------------------:| -----------------:|
+| date      | String | Date.now() | 2018-05-29T07:00:00+07:00 |
+| onEndCountdown | Func | null | (count) => console.log(count) |
+| lang | String | en | "th" or "en" |
+
+
 ## using
 ```javascript
 <Countdown
   date="2018-05-29T07:00:00+07:00"
   onEndCountdown={ (count) => console.log(count) }
+  lang="th"
 />
 ```
 
