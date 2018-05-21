@@ -14,6 +14,23 @@ var _propTypes2 = _interopRequireDefault(_propTypes);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+const langFormat = {
+  en: {
+    Days: 'D',
+    Day: 'Day',
+    Hours: 'Hours',
+    Min: 'Min',
+    Sec: 'Sec'
+  },
+  th: {
+    Days: 'วัน',
+    Day: 'วัน',
+    Hours: 'ชั่วโมง',
+    Min: 'นาที',
+    Sec: 'วินาที'
+  }
+};
+
 class Countdown extends _react.Component {
   constructor(props) {
     super(props);
@@ -95,7 +112,7 @@ class Countdown extends _react.Component {
 
   render() {
     const countDown = this.state;
-
+    const { lang } = this.props;
     return _react2.default.createElement(
       'div',
       { className: 'react-countdown-container' },
@@ -113,7 +130,7 @@ class Countdown extends _react.Component {
           _react2.default.createElement(
             'span',
             { className: 'react-countdown-time-text' },
-            countDown.days === 1 ? 'Day' : 'Days'
+            countDown.days === 1 ? langFormat[lang].Day : langFormat[lang].Days
           )
         )
       ),
@@ -131,7 +148,7 @@ class Countdown extends _react.Component {
           _react2.default.createElement(
             'span',
             { className: 'react-countdown-time-text' },
-            'Hours'
+            langFormat[lang].Hours
           )
         )
       ),
@@ -149,7 +166,7 @@ class Countdown extends _react.Component {
           _react2.default.createElement(
             'span',
             { className: 'react-countdown-time-text' },
-            'Min'
+            langFormat[lang].Min
           )
         )
       ),
@@ -167,7 +184,7 @@ class Countdown extends _react.Component {
           _react2.default.createElement(
             'span',
             { className: 'react-countdown-time-text' },
-            'Sec'
+            langFormat[lang].Sec
           )
         )
       )
@@ -177,12 +194,14 @@ class Countdown extends _react.Component {
 
 Countdown.propTypes = {
   date: _propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.number]),
-  onEndCountdown: _propTypes2.default.func
+  onEndCountdown: _propTypes2.default.func,
+  lang: _propTypes2.default.string
 };
 
 Countdown.defaultProps = {
   date: new Date(),
-  onEndCountdown: () => null
+  onEndCountdown: () => null,
+  lang: "en"
 };
 
 exports.default = Countdown;
