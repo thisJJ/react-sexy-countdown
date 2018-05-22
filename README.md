@@ -31,6 +31,7 @@ console.log(dateFormat); //2018-05-29T07:00:00+07:00
 | date      | String | Date.now() | 2018-05-29T07:00:00+07:00 |
 | onEndCountdown | Func | null | (count) => console.log(count) |
 | lang | String | en | "th" or "en" |
+| displayText | Object | {} | { Days: 'Days', Day: 'Day', Hours: 'Hours', Min: 'Min', Sec: 'Sec' } |
 
 
 ## using
@@ -51,33 +52,33 @@ console.log(dateFormat); //2018-05-29T07:00:00+07:00
 ## Style (with className for you custom style)
 ```html
   <div className="react-countdown-container">
-    <span className="react-countdown-box">
-      <span className="react-countdown-element">
-          <span className="react-countdown-time">12</span>
-          <span className="react-countdown-time-text">Days</span>
-      </span>
-    </span>
+    <div className="react-countdown-box">
+      <div className="react-countdown-element">
+        <div className="react-countdown-time-text">Day</div>
+        <div className="react-countdown-time">12</div>
+      </div>
+    </div>
 
-    <span className="react-countdown-box">
-      <span className="react-countdown-element">
-        <span className="react-countdown-time">4</span>
-        <span className="react-countdown-time-text">Hours</span>
-      </span>
-    </span>
+    <div className="react-countdown-box">
+      <div className="react-countdown-element">
+        <div className="react-countdown-time">Houts</div>
+        <div className="react-countdown-time-text">12</div>
+      </div>
+    </div>
 
 
-    <span className="react-countdown-box">
-      <span className="react-countdown-element">
-        <span className="react-countdown-time">12</span>
-        <span className="react-countdown-time-text">Min</span>
-      </span>
-    </span>
+    <div className="react-countdown-box">
+      <div className="react-countdown-element">
+        <div className="react-countdown-time">Min</div>
+        <div className="react-countdown-time-text">12</div>
+      </div>
+    </div>
 
-    <span className="react-countdown-box">
-      <span className="react-countdown-element">
-        <span className="react-countdown-time">45</span>
-        <span className="react-countdown-time-text">Sec</span>
-      </span>
-    </span>
+    <div className="react-countdown-box">
+      <div className="react-countdown-element">
+        <div className="react-countdown-time">Sec</div>
+        <div className="react-countdown-time-text">12</div>
+      </div>
+    </div>
   </div>
 ```
