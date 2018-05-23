@@ -40,6 +40,13 @@ console.log(dateFormat); //2018-05-29T07:00:00+07:00
   date="2018-05-29T07:00:00+07:00"
   onEndCountdown={ (count) => console.log(count) }
   lang="th"
+  displayText={{
+    Days: 'วัน',
+    Day: 'วัน',
+    Hours: 'ชั่วโมง',
+    Min: 'นาที',
+    Sec: 'วินาที',
+  }}
 />
 ```
 

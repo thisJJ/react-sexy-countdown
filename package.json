@@ -1,9 +1,10 @@
 {
   "name": "react-sexy-countdown",
-  "version": "1.0.14",
+  "version": "1.0.15",
   "description": "React Countdown",
   "main": "./index.js",
   "scripts": {
+    "storybook": "start-storybook -p 3001 -c .storybook",
     "build": "babel lib -d build"
   },
   "directories": {
@@ -27,6 +28,7 @@
   },
   "homepage": "https://github.com/thisJJ/react-sexy-countdown#readme",
   "dependencies": {
+    "@storybook/react": "^3.4.5",
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.4",
     "babel-plugin-add-module-exports": "^0.2.1",
