@@ -105,10 +105,10 @@ class Countdown extends _react.Component {
     };
 
     this.state = {
-      days: 0,
-      hours: 0,
-      min: 0,
-      sec: 0
+      days: 99,
+      hours: 23,
+      min: 59,
+      sec: 59
     };
   }
 
