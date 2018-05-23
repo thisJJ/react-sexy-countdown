@@ -68,23 +68,23 @@ console.log(dateFormat); //2018-05-29T07:00:00+07:00
 
     <div className="react-countdown-box">
       <div className="react-countdown-element">
-        <div className="react-countdown-time">Houts</div>
-        <div className="react-countdown-time-text">12</div>
+        <div className="react-countdown-time-text">Houts</div>
+        <div className="react-countdown-time">12</div>
       </div>
     </div>
 
 
     <div className="react-countdown-box">
       <div className="react-countdown-element">
-        <div className="react-countdown-time">Min</div>
-        <div className="react-countdown-time-text">12</div>
+        <div className="react-countdown-time-text">Min</div>
+        <div className="react-countdown-time">12</div>
       </div>
     </div>
 
     <div className="react-countdown-box">
       <div className="react-countdown-element">
-        <div className="react-countdown-time">Sec</div>
-        <div className="react-countdown-time-text">12</div>
+        <div className="react-countdown-time-text">Sec</div>
+        <div className="react-countdown-time">12</div>
       </div>
     </div>
   </div>
