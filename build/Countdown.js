@@ -14,6 +14,10 @@ var _propTypes2 = _interopRequireDefault(_propTypes);
 
 var _lodash = require('lodash');
 
+var _moment = require('moment');
+
+var _moment2 = _interopRequireDefault(_moment);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 const langFormat = {
@@ -40,7 +44,7 @@ class Countdown extends _react.Component {
     this.componentDidMount = () => {
       // update every second
       this.interval = setInterval(() => {
-        const date = this.calculateCountdown(this.props.date);
+        const date = this.calculateCountdown((0, _moment2.default)(this.props.date).format());
         date ? this.setState(date) : this.stop();
       }, 1000);
     };
@@ -105,10 +109,10 @@ class Countdown extends _react.Component {
     };
 
     this.state = {
-      days: 99,
-      hours: 23,
-      min: 59,
-      sec: 59
+      days: 0,
+      hours: 0,
+      min: 0,
+      sec: 0
     };
   }
 

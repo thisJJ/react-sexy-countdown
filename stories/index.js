@@ -2,11 +2,12 @@ import React from 'react'
 import { storiesOf } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
 import Countdown from '../lib'
+import moment from 'moment'
 storiesOf('Countdown', module)
   .add('Countdown', () => {
     return (
       <Countdown
-        date="2018-05-29T07:00:00+07:00"
+        date={ moment.unix(1527114359).utc().add(7, 'hour').format() }
         onEndCountdown={ (count) => console.log(count) }
         lang="th"
         displayText={{
