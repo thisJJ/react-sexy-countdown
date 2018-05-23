@@ -12,6 +12,8 @@ var _propTypes = require('prop-types');
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
+var _lodash = require('lodash');
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 const langFormat = {
@@ -112,79 +114,85 @@ class Countdown extends _react.Component {
 
   render() {
     const countDown = this.state;
-    const { lang } = this.props;
+    const {
+      lang,
+      displayText
+    } = this.props;
+
+    const getLangFormat = (0, _lodash.isEmpty)(displayText) ? langFormat[lang] : displayText;
+
     return _react2.default.createElement(
       'div',
       { className: 'react-countdown-container' },
       _react2.default.createElement(
-        'span',
+        'div',
         { className: 'react-countdown-box' },
         _react2.default.createElement(
-          'span',
+          'div',
           { className: 'react-countdown-element' },
           _react2.default.createElement(
-            'span',
+            'div',
+            { className: 'react-countdown-time-text' },
+            countDown.days === 1 ? getLangFormat.Day : getLangFormat.Days
+          ),
+          _react2.default.createElement(
+            'div',
             { className: 'react-countdown-time' },
             this.addLeadingZeros(countDown.days)
-          ),
-          _react2.default.createElement(
-            'span',
-            { className: 'react-countdown-time-text' },
-            countDown.days === 1 ? langFormat[lang].Day : langFormat[lang].Days
           )
         )
       ),
       _react2.default.createElement(
-        'span',
+        'div',
         { className: 'react-countdown-box' },
         _react2.default.createElement(
-          'span',
+          'div',
           { className: 'react-countdown-element' },
           _react2.default.createElement(
-            'span',
+            'div',
+            { className: 'react-countdown-time-text' },
+            getLangFormat.Hours
+          ),
+          _react2.default.createElement(
+            'div',
             { className: 'react-countdown-time' },
             this.addLeadingZeros(countDown.hours)
-          ),
-          _react2.default.createElement(
-            'span',
-            { className: 'react-countdown-time-text' },
-            langFormat[lang].Hours
           )
         )
       ),
       _react2.default.createElement(
-        'span',
+        'div',
         { className: 'react-countdown-box' },
         _react2.default.createElement(
-          'span',
+          'div',
           { className: 'react-countdown-element' },
           _react2.default.createElement(
-            'span',
+            'div',
+            { className: 'react-countdown-time-text' },
+            getLangFormat.Min
+          ),
+          _react2.default.createElement(
+            'div',
             { className: 'react-countdown-time' },
             this.addLeadingZeros(countDown.min)
-          ),
-          _react2.default.createElement(
-            'span',
-            { className: 'react-countdown-time-text' },
-            langFormat[lang].Min
           )
         )
       ),
       _react2.default.createElement(
-        'span',
+        'div',
         { className: 'react-countdown-box' },
         _react2.default.createElement(
-          'span',
+          'div',
           { className: 'react-countdown-element' },
           _react2.default.createElement(
-            'span',
-            { className: 'react-countdown-time' },
-            this.addLeadingZeros(countDown.sec)
+            'div',
+            { className: 'react-countdown-time-text' },
+            getLangFormat.Sec
           ),
           _react2.default.createElement(
-            'span',
-            { className: 'react-countdown-time-text' },
-            langFormat[lang].Sec
+            'div',
+            { className: 'react-countdown-time' },
+            this.addLeadingZeros(countDown.sec)
           )
         )
       )
@@ -195,7 +203,8 @@ class Countdown extends _react.Component {
 Countdown.propTypes = {
   date: _propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.number]),
   onEndCountdown: _propTypes2.default.func,
-  lang: _propTypes2.default.string
+  lang: _propTypes2.default.string,
+  displayText: _propTypes2.default.object
 };
 
 Countdown.defaultProps = {
