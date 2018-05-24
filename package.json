@@ -1,6 +1,6 @@
 {
   "name": "react-sexy-countdown",
-  "version": "1.0.18",
+  "version": "1.0.19",
   "description": "React Countdown",
   "main": "./index.js",
   "scripts": {

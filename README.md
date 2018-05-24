@@ -32,7 +32,8 @@ console.log(dateFormat); //2018-05-29T07:00:00+07:00
 | onEndCountdown | Func | null | (count) => console.log(count) |
 | lang | String | en | "th" or "en" |
 | displayText | Object | {} | { Days: 'Days', Day: 'Day', Hours: 'Hours', Min: 'Min', Sec: 'Sec' } |
-
+| lastTextTime | Object | {} | set text after number countdown example: { Day: 'D', Hours: 'H', Min: 'M', Sec: 'S' } |
+| beforeTextTime | Object | {} | set text before number countdown example:  { Day: 'D', Hours: 'H', Min: 'M', Sec: 'S' } |
 
 ## using
 ```javascript
@@ -46,6 +47,9 @@ console.log(dateFormat); //2018-05-29T07:00:00+07:00
     Hours: 'ชั่วโมง',
     Min: 'นาที',
     Sec: 'วินาที',
+  }}
+  lastTextTime={{
+    Day: 'D'
   }}
 />
 ```
@@ -62,14 +66,22 @@ console.log(dateFormat); //2018-05-29T07:00:00+07:00
     <div className="react-countdown-box">
       <div className="react-countdown-element">
         <div className="react-countdown-time-text">Day</div>
-        <div className="react-countdown-time">12</div>
+        <div className="react-countdown-time">
+          <span className="react-countdown-before-text-day">is</span>
+            12 
+          <span className="react-countdown-last-text-day">D</span>
+        </div>
       </div>
     </div>
 
     <div className="react-countdown-box">
       <div className="react-countdown-element">
         <div className="react-countdown-time-text">Houts</div>
-        <div className="react-countdown-time">12</div>
+        <div className="react-countdown-time">
+          <span className="react-countdown-before-text-hours">is</span>
+            12 
+          <span className="react-countdown-last-text-hours">H</span>
+        </div>
       </div>
     </div>
 
@@ -77,14 +89,22 @@ console.log(dateFormat); //2018-05-29T07:00:00+07:00
     <div className="react-countdown-box">
       <div className="react-countdown-element">
         <div className="react-countdown-time-text">Min</div>
-        <div className="react-countdown-time">12</div>
+        <div className="react-countdown-time">
+          <span className="react-countdown-before-text-min">is</span>
+            12 
+          <span className="react-countdown-last-text-min">M</span>
+        </div>
       </div>
     </div>
 
     <div className="react-countdown-box">
       <div className="react-countdown-element">
         <div className="react-countdown-time-text">Sec</div>
-        <div className="react-countdown-time">12</div>
+        <div className="react-countdown-time">
+          <span className="react-countdown-before-text-sec">is</span>
+            12 
+          <span className="react-countdown-last-text-sec">S</span>
+        </div>
       </div>
     </div>
   </div>

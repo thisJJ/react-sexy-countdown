@@ -120,7 +120,9 @@ class Countdown extends _react.Component {
     const countDown = this.state;
     const {
       lang,
-      displayText
+      displayText,
+      lastTextTime,
+      beforeTextTime
     } = this.props;
 
     const getLangFormat = (0, _lodash.isEmpty)(displayText) ? langFormat[lang] : displayText;
@@ -142,7 +144,11 @@ class Countdown extends _react.Component {
           _react2.default.createElement(
             'div',
             { className: 'react-countdown-time' },
-            this.addLeadingZeros(countDown.days)
+            (0, _lodash.get)(beforeTextTime, 'Day', ''),
+            ' ',
+            this.addLeadingZeros(countDown.days),
+            ' ',
+            (0, _lodash.get)(lastTextTime, 'Day', '')
           )
         )
       ),
@@ -160,7 +166,11 @@ class Countdown extends _react.Component {
           _react2.default.createElement(
             'div',
             { className: 'react-countdown-time' },
-            this.addLeadingZeros(countDown.hours)
+            (0, _lodash.get)(beforeTextTime, 'Hours', ''),
+            ' ',
+            this.addLeadingZeros(countDown.hours),
+            ' ',
+            (0, _lodash.get)(lastTextTime, 'Hours', '')
           )
         )
       ),
@@ -178,7 +188,11 @@ class Countdown extends _react.Component {
           _react2.default.createElement(
             'div',
             { className: 'react-countdown-time' },
-            this.addLeadingZeros(countDown.min)
+            (0, _lodash.get)(beforeTextTime, 'Min', ''),
+            ' ',
+            this.addLeadingZeros(countDown.min),
+            ' ',
+            (0, _lodash.get)(lastTextTime, 'Min', '')
           )
         )
       ),
@@ -196,7 +210,11 @@ class Countdown extends _react.Component {
           _react2.default.createElement(
             'div',
             { className: 'react-countdown-time' },
-            this.addLeadingZeros(countDown.sec)
+            (0, _lodash.get)(beforeTextTime, 'Sec', ''),
+            ' ',
+            this.addLeadingZeros(countDown.sec),
+            ' ',
+            (0, _lodash.get)(lastTextTime, 'Sec', '')
           )
         )
       )
@@ -208,13 +226,17 @@ Countdown.propTypes = {
   date: _propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.number]),
   onEndCountdown: _propTypes2.default.func,
   lang: _propTypes2.default.string,
-  displayText: _propTypes2.default.object
+  displayText: _propTypes2.default.object,
+  lastTextTime: _propTypes2.default.object,
+  beforeTextTime: _propTypes2.default.object
 };
 
 Countdown.defaultProps = {
   date: new Date(),
   onEndCountdown: () => null,
-  lang: "en"
+  lang: "en",
+  lastTextTime: {},
+  beforeTextTime: {}
 };
 
 exports.default = Countdown;
