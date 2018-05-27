@@ -1,6 +1,9 @@
 # react-sexy-countdown
 
-![build](https://api.travis-ci.org/thisJJ/react-sexy-countdown.svg?branch=master "Build")
+![GitHub package version](https://img.shields.io/github/package-json/v/thisjj/react-sexy-countdown.svg)
+![Build](https://api.travis-ci.org/thisJJ/react-sexy-countdown.svg?branch=master "Build")
+![Download](https://img.shields.io/npm/dt/react-sexy-countdown.svg "Download")
+
 
 ## Install
 ```
