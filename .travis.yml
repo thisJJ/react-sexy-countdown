@@ -1,6 +1,10 @@
 language: node_js
 node_js:
   - "8.1.3"
+install:
+  - npm install
+script:
+  - npm run build
 deploy:
   api_key: $NPM_TOKEN
   email: thinnakrit.idesign@gmail.com
