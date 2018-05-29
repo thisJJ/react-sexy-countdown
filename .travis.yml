@@ -4,7 +4,7 @@ node_js:
 install:
   - npm install
 script:
-  - npm run build
+  - npm build
 deploy:
   api_key: $NPM_TOKEN
   email: thinnakrit.idesign@gmail.com
