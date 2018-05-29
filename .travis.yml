@@ -6,8 +6,9 @@ install:
 script:
   - npm run build
 before_deploy:
-  - git add build/Countdown.js
-  - git add package-lock.json
+  - git config user.name "ThisJJ"
+  - git config --global user.email $GIT_EMAIL
+  - git add -A .
   - git commit -m "Travis deploy!"
   - git push origin master
 deploy:
