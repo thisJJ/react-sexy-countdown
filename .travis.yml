@@ -9,3 +9,9 @@ deploy:
   api_key: $NPM_TOKEN
   email: thinnakrit.idesign@gmail.com
   provider: npm
+after_deploy
+  - git add build/Countdown.js
+  - git add package-lock.json
+  - git commit -m "Travis deploy!"
+  - git push origin master
+  
