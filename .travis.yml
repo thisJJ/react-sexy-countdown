@@ -9,6 +9,3 @@ deploy:
   api_key: $NPM_TOKEN
   email: thinnakrit.idesign@gmail.com
   provider: npm
-  - git stage --all
-  - git commit -m 'Travis Build!'
-  - git push origin master
