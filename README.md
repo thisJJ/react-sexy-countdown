@@ -37,6 +37,10 @@ console.log(dateFormat); //2018-05-29T07:00:00+07:00
 | displayText | Object | {} | { Days: 'Days', Day: 'Day', Hours: 'Hours', Min: 'Min', Sec: 'Sec' } |
 | lastTextTime | Object | {} | set text after number countdown example: { Day: 'D', Hours: 'H', Min: 'M', Sec: 'S' } |
 | beforeTextTime | Object | {} | set text before number countdown example:  { Day: 'D', Hours: 'H', Min: 'M', Sec: 'S' } |
+|isDayDoubleZero|Boolean| false| "00 : 00 : 00 : 00" if true "0 : 00 : 00 : 00" |
+|isHoursDoubleZero|Boolean| false| "00 : 00 : 00 : 00" if true "00 : 0 : 00 : 00"|
+|isMinDoubleZero|Boolean| false| "00 : 00 : 00 : 00" if true "00 : 00 : 0 : 00"|
+|isSecDoubleZero|Boolean| false| "00 : 00 : 00 : 00" if true "00 : 00 : 00 : 0"|
 
 ## using
 ```javascript
@@ -54,6 +58,7 @@ console.log(dateFormat); //2018-05-29T07:00:00+07:00
   lastTextTime={{
     Day: 'D'
   }}
+  isDayDoubleZero={ true }
 />
 ```
 

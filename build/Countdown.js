@@ -100,10 +100,14 @@ class Countdown extends _react.Component {
       onEndCountdown(0);
     };
 
-    this.addLeadingZeros = value => {
+    this.addLeadingZeros = (value, setDoubleZero) => {
       value = String(value);
       while (value.length < 2) {
-        value = '0' + value;
+        if (setDoubleZero === true) {
+          value = '0' + value;
+        } else {
+          value = value;
+        }
       }
       return value;
     };
@@ -122,7 +126,11 @@ class Countdown extends _react.Component {
       lang,
       displayText,
       lastTextTime,
-      beforeTextTime
+      beforeTextTime,
+      isDayDoubleZero,
+      isHoursDoubleZero,
+      isMinDoubleZero,
+      isSecDoubleZero
     } = this.props;
 
     const getLangFormat = (0, _lodash.isEmpty)(displayText) ? langFormat[lang] : displayText;
@@ -144,11 +152,19 @@ class Countdown extends _react.Component {
           _react2.default.createElement(
             'div',
             { className: 'react-countdown-time' },
-            (0, _lodash.get)(beforeTextTime, 'Day', ''),
+            _react2.default.createElement(
+              'span',
+              { className: 'react-countdown-before-text-day' },
+              (0, _lodash.get)(beforeTextTime, 'Day', '')
+            ),
             ' ',
-            this.addLeadingZeros(countDown.days),
+            this.addLeadingZeros(countDown.days, isDayDoubleZero),
             ' ',
-            (0, _lodash.get)(lastTextTime, 'Day', '')
+            _react2.default.createElement(
+              'span',
+              { className: 'react-countdown-last-text-day' },
+              (0, _lodash.get)(lastTextTime, 'Day', '')
+            )
           )
         )
       ),
@@ -166,11 +182,19 @@ class Countdown extends _react.Component {
           _react2.default.createElement(
             'div',
             { className: 'react-countdown-time' },
-            (0, _lodash.get)(beforeTextTime, 'Hours', ''),
+            _react2.default.createElement(
+              'span',
+              { className: 'react-countdown-before-text-hours' },
+              (0, _lodash.get)(beforeTextTime, 'Hours', '')
+            ),
             ' ',
-            this.addLeadingZeros(countDown.hours),
+            this.addLeadingZeros(countDown.hours, isHoursDoubleZero),
             ' ',
-            (0, _lodash.get)(lastTextTime, 'Hours', '')
+            _react2.default.createElement(
+              'span',
+              { className: 'react-countdown-last-text-hours' },
+              (0, _lodash.get)(lastTextTime, 'Hours', '')
+            )
           )
         )
       ),
@@ -188,11 +212,19 @@ class Countdown extends _react.Component {
           _react2.default.createElement(
             'div',
             { className: 'react-countdown-time' },
-            (0, _lodash.get)(beforeTextTime, 'Min', ''),
+            _react2.default.createElement(
+              'span',
+              { className: 'react-countdown-before-text-min' },
+              (0, _lodash.get)(beforeTextTime, 'Min', '')
+            ),
             ' ',
-            this.addLeadingZeros(countDown.min),
+            this.addLeadingZeros(countDown.min, isMinDoubleZero),
             ' ',
-            (0, _lodash.get)(lastTextTime, 'Min', '')
+            _react2.default.createElement(
+              'span',
+              { className: 'react-countdown-last-text-min' },
+              (0, _lodash.get)(lastTextTime, 'Min', '')
+            )
           )
         )
       ),
@@ -210,11 +242,19 @@ class Countdown extends _react.Component {
           _react2.default.createElement(
             'div',
             { className: 'react-countdown-time' },
-            (0, _lodash.get)(beforeTextTime, 'Sec', ''),
+            _react2.default.createElement(
+              'span',
+              { className: 'react-countdown-before-text-sec' },
+              (0, _lodash.get)(beforeTextTime, 'Sec', '')
+            ),
             ' ',
-            this.addLeadingZeros(countDown.sec),
+            this.addLeadingZeros(countDown.sec, isSecDoubleZero),
             ' ',
-            (0, _lodash.get)(lastTextTime, 'Sec', '')
+            _react2.default.createElement(
+              'span',
+              { className: 'react-countdown-last-text-sec' },
+              (0, _lodash.get)(lastTextTime, 'Sec', '')
+            )
           )
         )
       )
@@ -228,7 +268,11 @@ Countdown.propTypes = {
   lang: _propTypes2.default.string,
   displayText: _propTypes2.default.object,
   lastTextTime: _propTypes2.default.object,
-  beforeTextTime: _propTypes2.default.object
+  beforeTextTime: _propTypes2.default.object,
+  isDayDoubleZero: _propTypes2.default.bool,
+  isHoursDoubleZero: _propTypes2.default.bool,
+  isMinDoubleZero: _propTypes2.default.bool,
+  isSecDoubleZero: _propTypes2.default.bool
 };
 
 Countdown.defaultProps = {
@@ -236,7 +280,11 @@ Countdown.defaultProps = {
   onEndCountdown: () => null,
   lang: "en",
   lastTextTime: {},
-  beforeTextTime: {}
+  beforeTextTime: {},
+  isDayDoubleZero: false,
+  isHoursDoubleZero: false,
+  isMinDoubleZero: false,
+  isSecDoubleZero: false
 };
 
 exports.default = Countdown;
