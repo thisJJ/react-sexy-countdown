@@ -102,11 +102,9 @@ class Countdown extends _react.Component {
 
     this.addLeadingZeros = (value, setDoubleZero) => {
       value = String(value);
-      while (value.length < 2) {
-        if (setDoubleZero === true) {
+      if (setDoubleZero === true) {
+        while (value.length < 2) {
           value = '0' + value;
-        } else {
-          value = value;
         }
       }
       return value;
@@ -281,10 +279,10 @@ Countdown.defaultProps = {
   lang: "en",
   lastTextTime: {},
   beforeTextTime: {},
-  isDayDoubleZero: false,
-  isHoursDoubleZero: false,
-  isMinDoubleZero: false,
-  isSecDoubleZero: false
+  isDayDoubleZero: true,
+  isHoursDoubleZero: true,
+  isMinDoubleZero: true,
+  isSecDoubleZero: true
 };
 
 exports.default = Countdown;

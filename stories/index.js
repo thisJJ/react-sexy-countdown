@@ -7,7 +7,7 @@ storiesOf('Countdown', module)
   .add('Countdown', () => {
     return (
       <Countdown
-        date={ moment.unix(1529114359).utc().add(7, 'hour').format() }
+        date={ moment.unix(1528114359).utc().add(7, 'hour').format() }
         onEndCountdown={ (count) => console.log(count) }
         lang="th"
         displayText={{
@@ -20,6 +20,7 @@ storiesOf('Countdown', module)
         lastTextTime={{
           Day: 'D'
         }}
+        isDayDoubleZero={ false }
       />
     )
   })
